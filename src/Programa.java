@@ -26,47 +26,23 @@ public class Programa {
 
             switch (opcao) {
                 case 1:
-                    System.out.print("Nome: ");
-                    String nome = scanner.nextLine();
-                    System.out.print("Telefone: ");
-                    String telefone = scanner.nextLine();
-                    System.out.print("Nascimento: ");
-                    LocalDate nascimento = LocalDate.parse(scanner.next(), dtf);
-                    System.out.print("Email: ");
-                    String email = scanner.nextLine();
-                    scanner.nextLine();
-                    System.out.print("Celular: ");
-                    String celular = scanner.nextLine();
-                    agenda.adicionarContato(nome, telefone, nascimento, email, celular);
+                    agenda.adicionarContato();
                     break;
                 case 2:
-                    System.out.print("Nome do contato a ser excluído: ");
-                    String nomeExcluir = scanner.nextLine();
-                    agenda.excluirContato(nomeExcluir);
+                    agenda.excluirContato();
                     break;
                 case 3:
-                    System.out.print("Nome do contato a ser pesquisado: ");
-                    String nomePesquisar = scanner.nextLine();
-                    Contato contatoEncontrado = agenda.pesquisarContato(nomePesquisar);
-                    if (contatoEncontrado != null) {
-                        System.out.println("Contato encontrado:");
-                        System.out.println("Nome: " + contatoEncontrado.getNome());
-                        System.out.println("Telefone: " + contatoEncontrado.getTelefone());
-                        System.out.println("Nascimento: " + contatoEncontrado.getNascimento());
-                        System.out.println("Email: " + contatoEncontrado.getEmail());
-                        System.out.println("Celular: " + contatoEncontrado.getCelular());
-                    } else {
-                        System.out.println("Contato não encontrado.");
-                    }
+                	agenda.pesquisarContato();
                     break;
                 case 4:
                     agenda.exibirListaContatos();
                     break;
                 case 5:
-                    System.out.println("Encerrando a aplicação.");
-                    System.exit(0);
+                	agenda.encerrarAgenda();
+                    break;
                 default:
                     System.out.println("Opção inválida.");
+                    System.out.println();
             }
         } 
     }
