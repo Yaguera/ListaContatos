@@ -1,11 +1,22 @@
-import java.util.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 class Contato {
     private String nome;
     private String telefone;
-    private String nascimento;
+    private LocalDate nascimento;
     private String email;
     private String celular;
+    
+    public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public Contato(String nome, String telefone, LocalDate nascimento, String email, String celular) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.nascimento = nascimento;
+        this.email = email;
+        this.celular = celular;
+    }
 
     public String getNome() {
         return nome;
@@ -23,11 +34,11 @@ class Contato {
         this.telefone = telefone;
     }
 
-    public String getNascimento() {
+    public LocalDate getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(String nascimento) {
+    public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
 
@@ -47,12 +58,16 @@ class Contato {
         this.celular = celular;
     }
 
-    public Contato(String nome, String telefone, String nascimento, String email, String celular) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.nascimento = nascimento;
-        this.email = email;
-        this.celular = celular;
-    }
+	@Override
+	public String toString() {
+		return "Nome: " + nome
+				+ "\nTelefone: " + telefone
+				+ "\nNascimento: " + nascimento
+	        	+ "\nEmail: " + email
+	        	+ "\nCelular: " + celular
+	        	+ "\n--------------------";
+	}
+
+    
 }
 
