@@ -3,19 +3,19 @@ import java.time.format.DateTimeFormatter;
 
 class Contato {
     private String nome;
-    private String telefone;
     private LocalDate nascimento;
-    private String email;
+    private String telefone;
     private String celular;
+    private String email;
     
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Contato(String nome, String telefone, LocalDate nascimento, String email, String celular) {
+    public Contato(String nome, LocalDate nascimento, String telefone, String celular, String email) {
         this.nome = nome;
-        this.telefone = telefone;
         this.nascimento = nascimento;
-        this.email = email;
+        this.telefone = telefone;
         this.celular = celular;
+        this.email = email;
     }
 
     public String getNome() {
@@ -61,11 +61,11 @@ class Contato {
 	@Override
 	public String toString() {
 		return "Nome: " + nome
+				+ "\nNascimento: " + dtf.format(nascimento)
 				+ "\nTelefone: " + telefone
-				+ "\nNascimento: " + nascimento
-	        	+ "\nEmail: " + email
 	        	+ "\nCelular: " + celular
-	        	+ "\n--------------------";
+	        	+ "\nEmail: " + email
+	        	+ "\n-------------------------------";
 	}
 
     

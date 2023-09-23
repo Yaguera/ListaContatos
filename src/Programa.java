@@ -1,13 +1,9 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Programa {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         AgendaContatos agenda = new AgendaContatos();
-        
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         while (true) {
         	System.out.println("+-----------------------------+");
